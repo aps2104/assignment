@@ -6,10 +6,10 @@ import CommentPage from './CommentPage'
 import Tabs from './Tabs'
 
 const tabs = [{
-  name: 'Tab 1',
+  name: 'TAB 1',
   content: <FlightDetails/>
 }, {
-  name: 'Tab 2',
+  name: 'TAB 2',
   content: <CommentPage/>
 
 }];

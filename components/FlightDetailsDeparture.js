@@ -4,18 +4,24 @@ import FlightOptions from './FlightOptions'
 import BaggageInformation from './BaggageInformation'
 import { connect } from 'react-redux';
 import { setDeparture } from '../actions/flight';
+import TiArrowRight from 'react-icons/lib/ti/arrow-right'
+import FaPaperPlaneO from 'react-icons/lib/fa/paper-plane-o'
+
 import './FlightDetails.css'
+
 
 class FlightDetailsDeparture extends React.Component {
 
     render() {
 		return (
-				<div className='departure-details' style={{display:'inline-block', width:'50%'}}> Departure
+				<div className='departure-details' style={{display:'inline-block', width:'50%'}}> 
+				<TiArrowRight size={40}/><span className='h5'>Departure</span>
 				<div className='header'>
-						<p>{this.props.departureFlight.from} to {this.props.departureFlight.to}</p>
+						<p className='h5'>{this.props.departureFlight.from} to {this.props.departureFlight.to}</p>
 					</div>
 					<div className='flight-number'>
-						{this.props.departureFlight.airline}  {this.props.departureFlight.flight_number}
+					<FaPaperPlaneO size={60}/>
+						<div>{this.props.departureFlight.airline}  {this.props.departureFlight.flight_number}</div>
 					</div>
 					<div className='flight-details'>
 					<div style={{display:'inline-block', width:'50%'}}>
@@ -23,7 +29,7 @@ class FlightDetailsDeparture extends React.Component {
 						<p><b>{this.props.departureFlight.timeRange[0]}</b></p>
 						<p>{this.props.departureFlight.from} </p>
 					</div>
-					<div className='connector-line'> {this.props.departureFlight.duration} </div>
+					<span className='connector-line'> {this.props.departureFlight.duration} </span>
 					<div className='destination' style={{display:'inline-block', width:'50%'}}>
 						<p>{this.props.departureFlight.destinationCode}  <b>{this.props.departureFlight.arrivalTime}</b></p>
 						<p><b>{this.props.departureFlight.timeRange[1]}</b></p>

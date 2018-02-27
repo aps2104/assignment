@@ -1,25 +1,27 @@
 .baggage-detail-container {
 	padding:10px 0px 10px 0px;
-	
 }
 .baggage-detail-content {
 	padding:10px 0px 10px 0px;
-	border-top: 1px solid black;
-    border-bottom: 1px solid black;
 	}
 .baggage-detail-warning {
 	padding-top: 10px;
+	border-top: 2px solid lightgray;
+	border-bottom: 2px solid lightgray;
 }
 .flight-details {
 	position:relative;
 }
-.connector-line {
-	display:inline-block;
-	position:absolute;
+div.connector-line {
+	
+    display: inline-block;
+    position: absolute;
+    left: 40%;
+
 }
 .connector-line:after,
 .connector-line:before{
-    content:"\00a0\00a0\00a0\00a0\00a0";
+    content:"\00a0\00a0\00a0\00a0";
     text-decoration:line-through;
 }
 .destination {
@@ -44,7 +46,8 @@
 
 .flight-options {
 	padding:10px;
-	border: 1px solid black;
+	border: 2px solid lightgray;
+	
 }
 .flight-options form{
 	padding:10px;
@@ -52,4 +55,59 @@
 
 .flight-number {
 	padding:0px 10px 10px 0px;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: skyblue;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.text-black {
+	color:black;
 }

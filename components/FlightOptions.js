@@ -39,13 +39,15 @@ class FlightOptions extends React.Component {
   }
     render() {
 		return (
-				<div className='flight-options'>
-					<p>{flightsData[0].from} to {flightsData[0].to}</p>
+				<div className='flight-options text-muted'>
+					<strong>{flightsData[0].from} to {flightsData[0].to}</strong>
 						<form>
 						{_.map(flightsData, (flights, i) => {
-							return	(<div className="radio">
-								<input type="radio" value= {'option'+i} checked={this.state.selectedOption === i} onChange={this.onOptionChange} />
-									{flights.sourceCode}  {flights.departureTime} {flights.destinationCode}  {flights.arrivalTime}
+							return	(<div className="radio form-check" key={'flights'+i}>
+								<input type="radio" className='with-gap' value={'option'+i} id={'option'+i} checked={this.state.selectedOption === i} onChange={this.onOptionChange} />
+									<label for={'option'+i}>
+									<strong>{flights.sourceCode}</strong> <span className='text-black font-weight-bold'>{flights.departureTime}</span> 
+					<span className='connector-line'> {flights.duration + ' | ' + flights.stops} </span> <strong>{flights.destinationCode}</strong> <span className='text-black font-weight-bold'>{flights.arrivalTime}</span></label>
 						</div>)
 						} )}
 					</form>

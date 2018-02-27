@@ -24,16 +24,34 @@ ul {
 
 .is-active {
   font-weight: bold;
-  color: rebeccapurple;
 }
 
+.tabs{
+  margin: 25px;
+}
 .tabs__content {
-	    clear: both
+  clear: both;
+  border: 2px solid skyblue;
 }
 
 .tabs__labels {
-	float:right;
+  float:right;
+  border: none;
 }
 .tabs__labels li {
-			display: inline-block;
-		}
+  display: inline-block;
+  border-top: 2px solid skyblue;
+  border-left: 2px solid skyblue;
+  border-right: 2px solid skyblue;
+}
+.tabs__labels li:nth-child(1) {
+  margin-right: 2px;
+}
+
+    
+.nav-link {
+  color:skyblue
+}
+
+    
+

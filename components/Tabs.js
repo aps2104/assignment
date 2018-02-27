@@ -13,8 +13,8 @@ export default class Tabs extends React.Component {
     function labels(child, idx) {
       let activeClass = (this.state.selected === idx ? 'is-active' : '');
       return (
-        <li role="tab" key={idx} aria-controls={`panel${idx}`}>
-          <a className={activeClass}  onClick={this.onClick.bind(this, idx)} href="#">
+        <li className='nav-item' role="tab" key={idx} aria-controls={`panel${idx}`}>
+          <a className={'nav-link '+ activeClass}  onClick={this.onClick.bind(this, idx)} href="#">
             {child.props.label}
           </a>
         </li>
@@ -22,7 +22,7 @@ export default class Tabs extends React.Component {
     }
 
    return (
-      <ul className="tabs__labels" role="tablist">
+      <ul className="nav nav-tabs tabs__labels" role="tablist">
         {this.props.children.map(labels.bind(this))}
       </ul>
     );
