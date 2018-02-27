@@ -1,0 +1,29 @@
+.form-inline .author {
+  margin-right: 8px;
+  width: 30%;
+}
+
+.form-inline .email {
+  margin-right: 8px;
+  width: 38%;
+}
+
+.form-inline .phone {
+  margin-right: 8px;
+  width: 30%;
+}
+
+input.form-control {
+  width: 100% !important;
+}
+.form-inline {
+  margin: 16px;
+}
+
+.comment {
+  margin: 0px 16px 0px 16px;
+}
+
+.btn.btn-success {
+  margin: 0px 16px 0px 16px;
+}

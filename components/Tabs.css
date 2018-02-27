@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  margin: 1em;
+}
+
+a {
+  text-decoration: none;
+  background: white;
+  padding: .5em;
+  display: block;
+  color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.is-active {
+  font-weight: bold;
+  color: rebeccapurple;
+}
+
+.tabs__content {
+	    clear: both
+}
+
+.tabs__labels {
+	float:right;
+}
+.tabs__labels li {
+			display: inline-block;
+		}

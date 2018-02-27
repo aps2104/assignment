@@ -1,0 +1,55 @@
+.baggage-detail-container {
+	padding:10px 0px 10px 0px;
+	
+}
+.baggage-detail-content {
+	padding:10px 0px 10px 0px;
+	border-top: 1px solid black;
+    border-bottom: 1px solid black;
+	}
+.baggage-detail-warning {
+	padding-top: 10px;
+}
+.flight-details {
+	position:relative;
+}
+.connector-line {
+	display:inline-block;
+	position:absolute;
+}
+.connector-line:after,
+.connector-line:before{
+    content:"\00a0\00a0\00a0\00a0\00a0";
+    text-decoration:line-through;
+}
+.destination {
+	text-align:right;
+    display: inline-block;
+    width: 50%;
+}
+.departure-details {
+	padding: 8px;
+	border-right: 1px solid black;
+}
+.return-details {
+	padding: 8px;
+}
+.header {
+	padding:10px;
+	margin-bottom:10px;
+	background-color: lightskyblue;
+	color:white;
+	
+}
+
+.flight-options {
+	padding:10px;
+	border: 1px solid black;
+}
+.flight-options form{
+	padding:10px;
+}
+
+.flight-number {
+	padding:0px 10px 10px 0px;
+}
