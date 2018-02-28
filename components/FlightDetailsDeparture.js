@@ -20,21 +20,21 @@ class FlightDetailsDeparture extends React.Component {
 						<p className='h5'>{this.props.departureFlight.from} to {this.props.departureFlight.to}</p>
 					</div>
 					<div className='flight-number'>
-					<FaPaperPlaneO size={60}/>
-						<div>{this.props.departureFlight.airline}  {this.props.departureFlight.flight_number}</div>
+						<FaPaperPlaneO size={50}/>
+						<div className='text-muted'>{this.props.departureFlight.airline}  {this.props.departureFlight.flight_number}</div>
 					</div>
 					<div className='flight-details'>
-					<div style={{display:'inline-block', width:'50%'}}>
-						<p>{this.props.departureFlight.sourceCode}  <b>{this.props.departureFlight.departureTime}</b></p>
-						<p><b>{this.props.departureFlight.timeRange[0]}</b></p>
-						<p>{this.props.departureFlight.from} </p>
-					</div>
-					<span className='connector-line'> {this.props.departureFlight.duration} </span>
-					<div className='destination' style={{display:'inline-block', width:'50%'}}>
-						<p>{this.props.departureFlight.destinationCode}  <b>{this.props.departureFlight.arrivalTime}</b></p>
-						<p><b>{this.props.departureFlight.timeRange[1]}</b></p>
-						<p>{this.props.departureFlight.to}</p>
-					</div>
+						<div style={{display:'inline-block', width:'50%'}}>
+							<p>{this.props.departureFlight.sourceCode}  <b>{this.props.departureFlight.departureTime}</b></p>
+							<p><b>{this.props.departureFlight.timeRange[0]}</b></p>
+							<p>{this.props.departureFlight.from} </p>
+						</div>
+						<div className='connector-line'> {this.props.departureFlight.duration} </div>
+						<div className='destination' style={{display:'inline-block', width:'50%'}}>
+							<p>{this.props.departureFlight.destinationCode}  <b>{this.props.departureFlight.arrivalTime}</b></p>
+							<p><b>{this.props.departureFlight.timeRange[1]}</b></p>
+							<p>{this.props.departureFlight.to}</p>
+						</div>
 					</div>
 					<BaggageInformation/>
 					<FlightOptions source='departure'/>

@@ -21,9 +21,38 @@ input.form-control {
 }
 
 .comment {
-  margin: 0px 16px 0px 16px;
+  margin: 0px 16px 16px 16px;
 }
 
 .btn.btn-success {
   margin: 0px 16px 0px 16px;
+}
+
+td .blockquote{
+  border-left: none;
+  font-size: 1.05rem;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid darkblue;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid darkblue;
+}
+
+.comments-section {
+  padding:8px;
+}
+
+.form-inline div {
+  height: 50px;
 }

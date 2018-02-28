@@ -18,21 +18,21 @@ class FlightDetailsArrival extends React.Component {
 						<p className='h5'>{this.props.returnFlight.from} to {this.props.returnFlight.to}</p>
 					</div>
 					<div className='flight-number'>
-					<FaPaperPlaneO size={60}/>
-					<div className='text-muted'>{this.props.returnFlight.airline}  {this.props.returnFlight.flight_number}</div>
+						<FaPaperPlaneO size={50}/>
+						<div className='text-muted'>{this.props.returnFlight.airline}  {this.props.returnFlight.flight_number}</div>
 					</div>
 					<div className='flight-details'>
-					<div style={{display:'inline-block', width:'50%'}}>
-						<p>{this.props.returnFlight.sourceCode}  <b>{this.props.returnFlight.departureTime}</b></p>
-						<p><b>{this.props.returnFlight.timeRange[0]}</b></p>
-						<p>{this.props.returnFlight.from} </p>
-					</div>
-					<span className='connector-line'> {this.props.returnFlight.duration} </span>
-					<div className='destination' style={{display:'inline-block', width:'50%'}}>
-						<p>{this.props.returnFlight.destinationCode}  <b>{this.props.returnFlight.arrivalTime}</b></p>
-						<p><b>{this.props.returnFlight.timeRange[1]}</b></p>
-						<p>{this.props.returnFlight.to}</p>
-					</div>
+						<div style={{display:'inline-block', width:'50%'}}>
+							<p>{this.props.returnFlight.sourceCode}  <b>{this.props.returnFlight.departureTime}</b></p>
+							<p><b>{this.props.returnFlight.timeRange[0]}</b></p>
+							<p>{this.props.returnFlight.from} </p>
+						</div>
+						<div className='connector-line'> {this.props.returnFlight.duration} </div>
+						<div className='destination' style={{display:'inline-block', width:'50%'}}>
+							<p>{this.props.returnFlight.destinationCode}  <b>{this.props.returnFlight.arrivalTime}</b></p>
+							<p><b>{this.props.returnFlight.timeRange[1]}</b></p>
+							<p>{this.props.returnFlight.to}</p>
+						</div>
 					</div>
 					<BaggageInformation/>
 					<FlightOptions source='return'/>

@@ -22,9 +22,12 @@ export default class Tabs extends React.Component {
     }
 
    return (
-      <ul className="nav nav-tabs tabs__labels" role="tablist">
+
+    <div className="tabs-container">
+      <ul className="nav tabs__labels" role="tablist">
         {this.props.children.map(labels.bind(this))}
       </ul>
+      </div>
     );
   }
 
@@ -38,12 +41,12 @@ export default class Tabs extends React.Component {
 
   render() {
     return (
-      <div className="tabs">
-        {this._renderTitles()}
+        <div className="tabs">
+          {this._renderTitles()}
 
-        <div className="tabs__content">
-          {this.props.children[this.state.selected]}
-        </div>
+          <div className="tabs__content">
+            {this.props.children[this.state.selected]}
+          </div>
       </div>);
   }
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import AngleUp from 'react-icons/lib/fa/angle-up'
-import AngleDown from 'react-icons/lib/fa/angle-down'
+import AngleUp from 'react-icons/lib/md/arrow-drop-up'
+import AngleDown from 'react-icons/lib/md/arrow-drop-down'
 import { connect } from 'react-redux'
 import { updatePostVote } from '../actions/post'
-
+import './PostForm.css'
 class VoteScore extends Component {
 
   render() {
@@ -15,10 +15,10 @@ class VoteScore extends Component {
 
     return (
       <div>
-        <AngleUp className="clickable-icon" size={size}
+        <div className="clickable-icon arrow-up" size={size}
           onClick={() =>updatePostVote(id, "upVote")}/>
-        <br />{ vote }<br />
-        <AngleDown className="clickable-icon" size={size}
+        <div style={{textAlign:'center', width:'23px', margin:'8px 0px'}}>{ vote }</div>
+        <div className="clickable-icon arrow-down" size={size}
           onClick={() => updatePostVote(id, "downVote")}/>
       </div>
     )

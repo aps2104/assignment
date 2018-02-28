@@ -27,11 +27,13 @@ ul {
 }
 
 .tabs{
-  margin: 25px;
+  margin: 20px 20px 0px 20px;
+  border-right: 2px solid skyblue;
 }
 .tabs__content {
   clear: both;
-  border: 2px solid skyblue;
+  border-bottom: 2px solid skyblue;
+  border-left: 2px solid skyblue;
 }
 
 .tabs__labels {
@@ -42,16 +44,23 @@ ul {
   display: inline-block;
   border-top: 2px solid skyblue;
   border-left: 2px solid skyblue;
-  border-right: 2px solid skyblue;
 }
 .tabs__labels li:nth-child(1) {
   margin-right: 2px;
+  border-right: 2px solid skyblue;
 }
 
-    
+.tabs-container {
+  width:100%;
+  border-bottom: 2px solid skyblue;
+  height:45px;
+}
 .nav-link {
   color:skyblue
 }
 
+.tabs__labels {
+  border-bottom: 3px solid white;
+}
     
 

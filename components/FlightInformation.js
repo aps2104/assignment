@@ -28,5 +28,5 @@ export default class FlightInformation extends React.Component {
 }
 
 const Pane = (props) => {
-  return <div>{props.children}</div>;
+  return <div key={props.label}>{props.children}</div>;
 }

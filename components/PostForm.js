@@ -49,17 +49,17 @@ class PostForm extends Component {
                   'value': e.target.value})}
                   placeholder='Enter your name'
                   />
-                  <p key='field1'>{this.state.errors['author'] || ''}</p>
+                  {(this.state.errors['author']) ? <p key='field1' className='text-danger'>{this.state.errors['author'] || ''}</p> : null}
             </div>
 
             <div className='email'>
-              <input className="form-control"  ref={emailInput => this._emailInput = emailInput} type="text" name="email" value={post && post.email || ''}
+              <input className="form-control "  ref={emailInput => this._emailInput = emailInput} type="text" name="email" value={post && post.email || ''}
                 onChange={(e) => updateModalPost({
                   'name': e.target.name,
                   'value': e.target.value})}
                   placeholder='Enter your email'
                   />
-                  <p key='field2'>{this.state.errors['email'] || ''}</p>
+                  {(this.state.errors['email']) ? <p key='field2' className='text-danger'>{this.state.errors['email'] || ''}</p> : null}
             </div>
 
             <div className='phone'>
@@ -69,7 +69,7 @@ class PostForm extends Component {
                   'value': e.target.value})}
                   placeholder='Enter your number'
                   />
-                  <p key='field3'>{this.state.errors['phone'] || ''}</p>
+                  {(this.state.errors['phone']) ? <p key='field3' className='text-danger'>{this.state.errors['phone'] || ''}</p> : null}
             </div>
             </div>
           <div className ='comment'>
@@ -79,7 +79,7 @@ class PostForm extends Component {
                 'name': e.target.name,
                 'value': e.target.value})}
               placeholder='Enter your comment'/>
-              <p key='field4'>{this.state.errors['comment'] || ''}</p>
+              {(this.state.errors['comment']) ? <p key='field4' className='text-danger'>{this.state.errors['comment'] || ''}</p>: null}
             </div>
           <Button
             bsStyle='success'

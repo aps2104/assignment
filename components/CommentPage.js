@@ -14,8 +14,10 @@ class CommentPage extends Component {
 
   render() {
     return (
-    <div>
-      <h4>Comment Section</h4>
+    <div className='comments-section'>
+      <h4>What is the most interesting fact that you know ?</h4>
+      <h6>What is the most interesting fact that you know ? What is the most interesting fact that you know ?
+      What is the most interesting fact that you know ? What is the most interesting fact that you know ?  </h6>
       <PostList />
       <PostForm />
     </div>

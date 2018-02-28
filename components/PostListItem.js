@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import VoteScore from './VoteScore'
-import { timestampToDate } from '../utils/format'
+import { timestampToTime } from '../utils/format'
+import './PostForm.css'
 
 class PostListItem extends Component {
 
@@ -11,10 +12,13 @@ class PostListItem extends Component {
 
     return (
       <tr>
-        <td className="vote-score"><VoteScore id={post.id} vote={post.voteScore} size={23}/></td>
-        <td><br />{post.title}</td>
-        <td><br />{post.author}</td>
-        <td><br />{timestampToDate(post.timestamp)}</td>
+        <td className="vote-score"><VoteScore id={post.id} vote={post.voteScore} size={25}/></td>
+        <td>
+          <blockquote className="blockquote">
+            <cite className='text-muted'>Replied by {post.author} {timestampToTime(post.timestamp)}</cite>
+            <p className="mb-0">{post.title}</p>
+          </blockquote>
+        </td>
       </tr>
     )
   }

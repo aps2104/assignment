@@ -31,7 +31,7 @@ div.connector-line {
 }
 .departure-details {
 	padding: 8px;
-	border-right: 1px solid black;
+	border-right: 4px solid lightgray;
 }
 .return-details {
 	padding: 8px;
@@ -111,3 +111,9 @@ div.connector-line {
 .text-black {
 	color:black;
 }
+
+.flight-details p {
+    margin-top: 0; 
+    margin-bottom: 0
+}
+    
