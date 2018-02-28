@@ -29,6 +29,7 @@
     "css-loader": "^0.28.10",
     "file-loader": "^1.1.9",
     "lodash": "^4.17.5",
+    "moment": "^2.20.1",
     "path": "^0.12.7",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
