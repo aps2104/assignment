@@ -47,6 +47,7 @@ class FlightOptions extends React.Component {
 								<input type="radio" className='with-gap' value={'option'+i} id={this.props.source+i} checked={this.state.selectedOption === i} onChange={this.onOptionChange} />
 									<label htmlFor={this.props.source+i}>
 									<strong>{flights.sourceCode}</strong> <span className='text-black font-weight-bold'>{flights.departureTime}</span> 
+									
 									<span className='connector-line'> {flights.duration + ' | ' + flights.stops} </span> <strong>{flights.destinationCode}</strong> <span className='text-black font-weight-bold'>{flights.arrivalTime}</span></label>
 						</div>)
 						} )}

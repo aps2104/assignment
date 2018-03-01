@@ -1,3 +1,6 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+ 
+
 .baggage-detail-container {
 	padding:10px 0px 10px 0px;
 }
@@ -116,4 +119,51 @@ div.connector-line {
     margin-top: 0; 
     margin-bottom: 0
 }
-    
+
+.time-txt:before {
+    position:relative;
+    content:"";
+    width: 30%;
+    left: -2px;
+    top: -4px;
+    display: inline-block;
+    height: 1px;
+    border-top: 2px solid black;
+}
+
+.time-txt:after {
+    position:relative;
+    content:"";
+    width: 30%;
+    right: -2px;
+    top: -4px;
+    display: inline-block;
+    height: 1px;
+    border-top: 2px solid black;
+}
+
+.line:before {
+    position:relative;
+    content:"";
+    width: 20%;
+    margin: -5px;
+    top: -8px;
+    display: inline-block;
+    height: 1px;
+    border-top: 2px solid black;
+}
+.center {
+position: relative;
+text-align: center;
+top: -50px;
+}
+
+.time-text {
+display: inline-block;
+width: 80%;
+}
+
+.flight-duration-details {
+    width: 30%;
+    display: inline-block;
+}

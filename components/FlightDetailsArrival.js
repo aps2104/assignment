@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { setReturn } from '../actions/flight';
 import TiArrowLeft from 'react-icons/lib/ti/arrow-left'
 import FaPaperPlaneO from 'react-icons/lib/fa/paper-plane-o'
+import FlightDuration from './FilightDuration'
 import './FlightDetails.css'
 
 
@@ -22,13 +23,13 @@ class FlightDetailsArrival extends React.Component {
 						<div className='text-muted'>{this.props.returnFlight.airline}  {this.props.returnFlight.flight_number}</div>
 					</div>
 					<div className='flight-details'>
-						<div style={{display:'inline-block', width:'50%'}}>
+						<div style={{display:'inline-block', width:'35%'}}>
 							<p>{this.props.returnFlight.sourceCode}  <b>{this.props.returnFlight.departureTime}</b></p>
 							<p><b>{this.props.returnFlight.timeRange[0]}</b></p>
 							<p>{this.props.returnFlight.from} </p>
 						</div>
-						<div className='connector-line'> {this.props.returnFlight.duration} </div>
-						<div className='destination' style={{display:'inline-block', width:'50%'}}>
+						<FlightDuration duration ={this.props.returnFlight.duration}/>
+						<div className='destination' style={{display:'inline-block', width:'35%'}}>
 							<p>{this.props.returnFlight.destinationCode}  <b>{this.props.returnFlight.arrivalTime}</b></p>
 							<p><b>{this.props.returnFlight.timeRange[1]}</b></p>
 							<p>{this.props.returnFlight.to}</p>
