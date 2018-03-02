@@ -56,3 +56,8 @@ td .blockquote{
 .form-inline div {
   height: 50px;
 }
+
+.post-list {
+  height: 200px;
+  overflow: auto;
+}

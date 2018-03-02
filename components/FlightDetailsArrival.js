@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom'
 import FlightOptions from './FlightOptions'
 import BaggageInformation from './BaggageInformation'
 import { connect } from 'react-redux';
-import { setReturn } from '../actions/flight';
 import TiArrowLeft from 'react-icons/lib/ti/arrow-left'
-import FaPaperPlaneO from 'react-icons/lib/fa/paper-plane-o'
-import FlightDuration from './FilightDuration'
+import FlightOptionInformation from './FlightOptionInformation'
 import './FlightDetails.css'
 
 
@@ -15,26 +13,7 @@ class FlightDetailsArrival extends React.Component {
 		return (
 				<div className='return-details' style={{display:'inline-block', width:'50%'}}> 
 				<TiArrowLeft size={40}/><span className='h5'>Return</span>
-				<div className='header'>
-						<p className='h5'>{this.props.returnFlight.from} to {this.props.returnFlight.to}</p>
-					</div>
-					<div className='flight-number'>
-						<FaPaperPlaneO size={50}/>
-						<div className='text-muted'>{this.props.returnFlight.airline}  {this.props.returnFlight.flight_number}</div>
-					</div>
-					<div className='flight-details'>
-						<div style={{display:'inline-block', width:'35%'}}>
-							<p>{this.props.returnFlight.sourceCode}  <b>{this.props.returnFlight.departureTime}</b></p>
-							<p><b>{this.props.returnFlight.timeRange[0]}</b></p>
-							<p>{this.props.returnFlight.from} </p>
-						</div>
-						<FlightDuration duration ={this.props.returnFlight.duration}/>
-						<div className='destination' style={{display:'inline-block', width:'35%'}}>
-							<p>{this.props.returnFlight.destinationCode}  <b>{this.props.returnFlight.arrivalTime}</b></p>
-							<p><b>{this.props.returnFlight.timeRange[1]}</b></p>
-							<p>{this.props.returnFlight.to}</p>
-						</div>
-					</div>
+					<FlightOptionInformation flight={this.props.returnFlight}/>
 					<BaggageInformation/>
 					<FlightOptions source='return'/>
 				</div>
@@ -47,12 +26,4 @@ function mapStateToProps ({flights}) {
   }
 }
 
-function mapDispatchToProps (dispatch) {
-	return {
-		doSetReturn : (index) => {
-			dispatch(setReturn(index))
-		}
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FlightDetailsArrival)
+export default connect(mapStateToProps)(FlightDetailsArrival)
