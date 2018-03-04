@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'react-bootstrap';
+import { Button, FormGroup, ControlLabel, FormControl, HelpBlock, Col, InputGroup, Form, Glyphicon } from 'react-bootstrap';
+
 import ReactDOM from 'react-dom';
 import { addPost, updateModalPost} from '../actions/post';
 import './PostForm.css'
+import classNames from 'classNames'
 
 import _ from 'lodash';
 class PostForm extends Component {
@@ -32,6 +34,7 @@ class PostForm extends Component {
     }
   }
 
+
   render() {
     // from post reducer
     const { postModalState, updateModalPost } = this.props
@@ -43,42 +46,53 @@ class PostForm extends Component {
         <form className="form">
         <div className='form-inline'>
           <div className='author'>
-              <input className="form-control" ref={author => this._author = author}  type="text" name="author" value={post && post.author || ''}
+              <input className={classNames("form-control", {
+                'is-invalid' : this.state.errors['author']})} 
+                ref={author => this._author = author}  
+                type="text" name="author" 
+                value={post && post.author || ''}
                 onChange={(e) => updateModalPost({
                   'name': e.target.name,
                   'value': e.target.value})}
-                  placeholder='Enter your name'
-                  />
+                  placeholder='Enter your name' />
                   {(this.state.errors['author']) ? <p key='field1' className='text-danger'>{this.state.errors['author'] || ''}</p> : null}
             </div>
 
             <div className='email'>
-              <input className="form-control "  ref={emailInput => this._emailInput = emailInput} type="text" name="email" value={post && post.email || ''}
-                onChange={(e) => updateModalPost({
-                  'name': e.target.name,
-                  'value': e.target.value})}
-                  placeholder='Enter your email'
-                  />
+                <input className={classNames("form-control", {
+                                'is-invalid' : this.state.errors['email']})}  
+                  ref={emailInput => this._emailInput = emailInput} 
+                  type="text" name="email" 
+                  value={post && post.email || ''}
+                  onChange={(e) => updateModalPost({
+                    'name': e.target.name,
+                    'value': e.target.value})}
+                    placeholder='Enter your email' />
                   {(this.state.errors['email']) ? <p key='field2' className='text-danger'>{this.state.errors['email'] || ''}</p> : null}
             </div>
 
             <div className='phone'>
-                <input className="form-control" ref={phone => this._phone = phone} type="number" name="phonenumber" value={post && post.phonenumber || ''}
-                onChange={(e) => updateModalPost({
+                <input className={classNames("form-control", {
+                                              'is-invalid' : this.state.errors['phone']})} 
+                  ref={phone => this._phone = phone} 
+                  type="number" name="phonenumber"
+                  value={post && post.phonenumber || ''}
+                  onChange={(e) => updateModalPost({
                   'name': e.target.name,
                   'value': e.target.value})}
-                  placeholder='Enter your number'
-                  />
+                  placeholder='Enter your number' />
                   {(this.state.errors['phone']) ? <p key='field3' className='text-danger'>{this.state.errors['phone'] || ''}</p> : null}
             </div>
             </div>
           <div className ='comment'>
-            <textarea ref={comment => this._comment = comment} className="form-control" rows="5" name="body"
-              value={post && post.body || ''}
-              onChange={(e) => updateModalPost({
-                'name': e.target.name,
-                'value': e.target.value})}
-              placeholder='Enter your comment'/>
+            <textarea ref={comment => this._comment = comment} 
+                className={classNames("form-control", {
+                'is-invalid' : this.state.errors['comment']})} rows="5" name="body"
+                value={post && post.body || ''}
+                onChange={(e) => updateModalPost({
+                  'name': e.target.name,
+                  'value': e.target.value})}
+                placeholder='Enter your comment'/>
               {(this.state.errors['comment']) ? <p key='field4' className='text-danger'>{this.state.errors['comment'] || ''}</p>: null}
             </div>
           <Button
@@ -87,12 +101,14 @@ class PostForm extends Component {
               if (!this.validate()) {
                 addPost(post)
               }
-            }}>
+            }}
+            >
             Submit
           </Button>
         </form>
       </div>
     );
+  
   }
 }
 
@@ -105,7 +121,7 @@ function validate(author, email, phone, comment) {
   }
 
   if (email.length < 5 || (email.split('').filter(x => x === '@').length !== 1) || (email.indexOf('.') === -1) ) {
-    errors['email'] = "Email should be at least 5 charcters long";
+    errors['email'] = "Please enter valid email";
   }
   
   if (phone.length !== 10) {
