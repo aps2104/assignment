@@ -1,5 +1,5 @@
 {
-  "name": "makemytrip",
+  "name": "assignment",
   "version": "1.0.0",
   "description": "assignment",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "makemytrip"
+    "assignment"
   ],
   "author": "apurva",
   "license": "ISC",
